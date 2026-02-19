@@ -50,15 +50,14 @@ def checkout_func():
             repo_https_url + "cscosine",
             "3rdPartyBaseLibs",
             lib,
-            "v0.1.0-test",
+            "v0.1.0-rc2",
             libs_os_presets,
         )
 
-    # TODO(cs): enable when available
     list_csBaseLibs = [
-        # "csCore",
-        # "csLie",
-        # "csCamera",
+        "csCore",
+        "csLie",
+        "csCamera",
     ]
 
     for lib in list_csBaseLibs:
@@ -66,7 +65,7 @@ def checkout_func():
             repo_https_url + "cscosine",
             "csBaseLibs",
             lib,
-            "v0.1.0-test",
+            "v0.1.0-rc1",
             libs_os_presets,
         )
 
