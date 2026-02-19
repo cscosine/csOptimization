@@ -15,6 +15,7 @@ fi
 
 packages=(
   # add required packages here
+  libomp-dev #TODO(sc): should be only for LLVM case
 )
 
 missing=()
