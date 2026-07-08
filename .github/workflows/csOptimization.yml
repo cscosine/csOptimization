@@ -55,18 +55,18 @@ jobs:
             c_compiler: gcc
             cpp_compiler: g++
             compiler_version: default
-            generator: ninja
-            generator_type: singleconfig
-            generator_cmake: Ninja
+            generator: ninjamulticonfig
+            generator_type: multiconfig
+            generator_cmake: Ninja Multi-Config
             runner: ubuntu-22.04
           - execution_id: 1
             os: linux
             os_version: ubuntu22.04
             architecture: x64
             architecture_variant: generic
-            compiler: gcc
-            c_compiler: gcc
-            cpp_compiler: g++
+            compiler: clang
+            c_compiler: clang
+            cpp_compiler: clang++
             compiler_version: default
             generator: ninjamulticonfig
             generator_type: multiconfig
@@ -75,7 +75,20 @@ jobs:
           - execution_id: 2
             os: linux
             os_version: ubuntu22.04
-            architecture: x64
+            architecture: arm64
+            architecture_variant: generic
+            compiler: gcc
+            c_compiler: gcc
+            cpp_compiler: g++
+            compiler_version: default
+            generator: ninja
+            generator_type: singleconfig
+            generator_cmake: Ninja
+            runner: ubuntu-22.04-arm
+          - execution_id: 3
+            os: linux
+            os_version: ubuntu22.04
+            architecture: arm64
             architecture_variant: generic
             compiler: clang
             c_compiler: clang
@@ -84,20 +97,7 @@ jobs:
             generator: ninja
             generator_type: singleconfig
             generator_cmake: Ninja
-            runner: ubuntu-22.04
-          - execution_id: 3
-            os: linux
-            os_version: ubuntu22.04
-            architecture: x64
-            architecture_variant: generic
-            compiler: clang
-            c_compiler: clang
-            cpp_compiler: clang++
-            compiler_version: default
-            generator: ninjamulticonfig
-            generator_type: multiconfig
-            generator_cmake: Ninja Multi-Config
-            runner: ubuntu-22.04
+            runner: ubuntu-22.04-arm
           - execution_id: 4
             os: linux
             os_version: ubuntu24.04
@@ -107,18 +107,18 @@ jobs:
             c_compiler: gcc
             cpp_compiler: g++
             compiler_version: default
-            generator: ninja
-            generator_type: singleconfig
-            generator_cmake: Ninja
+            generator: ninjamulticonfig
+            generator_type: multiconfig
+            generator_cmake: Ninja Multi-Config
             runner: ubuntu-24.04
           - execution_id: 5
             os: linux
             os_version: ubuntu24.04
             architecture: x64
             architecture_variant: generic
-            compiler: gcc
-            c_compiler: gcc
-            cpp_compiler: g++
+            compiler: clang
+            c_compiler: clang
+            cpp_compiler: clang++
             compiler_version: default
             generator: ninjamulticonfig
             generator_type: multiconfig
@@ -127,7 +127,20 @@ jobs:
           - execution_id: 6
             os: linux
             os_version: ubuntu24.04
-            architecture: x64
+            architecture: arm64
+            architecture_variant: generic
+            compiler: gcc
+            c_compiler: gcc
+            cpp_compiler: g++
+            compiler_version: default
+            generator: ninja
+            generator_type: singleconfig
+            generator_cmake: Ninja
+            runner: ubuntu-24.04-arm
+          - execution_id: 7
+            os: linux
+            os_version: ubuntu24.04
+            architecture: arm64
             architecture_variant: generic
             compiler: clang
             c_compiler: clang
@@ -136,20 +149,7 @@ jobs:
             generator: ninja
             generator_type: singleconfig
             generator_cmake: Ninja
-            runner: ubuntu-24.04
-          - execution_id: 7
-            os: linux
-            os_version: ubuntu24.04
-            architecture: x64
-            architecture_variant: generic
-            compiler: clang
-            c_compiler: clang
-            cpp_compiler: clang++
-            compiler_version: default
-            generator: ninjamulticonfig
-            generator_type: multiconfig
-            generator_cmake: Ninja Multi-Config
-            runner: ubuntu-24.04
+            runner: ubuntu-24.04-arm
           - execution_id: 8
             os: windows
             os_version: v10
@@ -265,7 +265,7 @@ jobs:
         uses: robinraju/release-downloader@v1.13
         with:
           repository: cscosine/3rdPartyBaseLibs
-          tag: v0.1.0-test
+          tag: v0.1.0
           fileName: ${{ steps.filename_3rdPartyBaseLibs_eigen3.outputs.filename_3rdPartyBaseLibs_eigen3 }}
           out-file-path: workspace/libs/csv1-${{ matrix.os }}-${{ matrix.os_version }}-${{ matrix.architecture }}-${{ matrix.architecture_variant }}-${{ matrix.compiler }}-${{ matrix.compiler_version }}-${{ matrix.generator }}
 
@@ -288,7 +288,7 @@ jobs:
         uses: robinraju/release-downloader@v1.13
         with:
           repository: cscosine/3rdPartyBaseLibs
-          tag: v0.1.0-test
+          tag: v0.1.0
           fileName: ${{ steps.filename_3rdPartyBaseLibs_cpptrace.outputs.filename_3rdPartyBaseLibs_cpptrace }}
           out-file-path: workspace/libs/csv1-${{ matrix.os }}-${{ matrix.os_version }}-${{ matrix.architecture }}-${{ matrix.architecture_variant }}-${{ matrix.compiler }}-${{ matrix.compiler_version }}-${{ matrix.generator }}
 
@@ -311,7 +311,7 @@ jobs:
         uses: robinraju/release-downloader@v1.13
         with:
           repository: cscosine/3rdPartyBaseLibs
-          tag: v0.1.0-test
+          tag: v0.1.0
           fileName: ${{ steps.filename_3rdPartyBaseLibs_magic_enum.outputs.filename_3rdPartyBaseLibs_magic_enum }}
           out-file-path: workspace/libs/csv1-${{ matrix.os }}-${{ matrix.os_version }}-${{ matrix.architecture }}-${{ matrix.architecture_variant }}-${{ matrix.compiler }}-${{ matrix.compiler_version }}-${{ matrix.generator }}
 
@@ -334,7 +334,7 @@ jobs:
         uses: robinraju/release-downloader@v1.13
         with:
           repository: cscosine/3rdPartyBaseLibs
-          tag: v0.1.0-test
+          tag: v0.1.0
           fileName: ${{ steps.filename_3rdPartyBaseLibs_libassert.outputs.filename_3rdPartyBaseLibs_libassert }}
           out-file-path: workspace/libs/csv1-${{ matrix.os }}-${{ matrix.os_version }}-${{ matrix.architecture }}-${{ matrix.architecture_variant }}-${{ matrix.compiler }}-${{ matrix.compiler_version }}-${{ matrix.generator }}
 
@@ -357,7 +357,7 @@ jobs:
         uses: robinraju/release-downloader@v1.13
         with:
           repository: cscosine/3rdPartyBaseLibs
-          tag: v0.1.0-test
+          tag: v0.1.0
           fileName: ${{ steps.filename_3rdPartyBaseLibs_Catch2.outputs.filename_3rdPartyBaseLibs_Catch2 }}
           out-file-path: workspace/libs/csv1-${{ matrix.os }}-${{ matrix.os_version }}-${{ matrix.architecture }}-${{ matrix.architecture_variant }}-${{ matrix.compiler }}-${{ matrix.compiler_version }}-${{ matrix.generator }}
 
@@ -380,7 +380,7 @@ jobs:
         uses: robinraju/release-downloader@v1.13
         with:
           repository: cscosine/csBaseLibs
-          tag: v0.1.0-rc1
+          tag: v0.1.0
           fileName: ${{ steps.filename_csBaseLibs_csCore.outputs.filename_csBaseLibs_csCore }}
           out-file-path: workspace/libs/csv1-${{ matrix.os }}-${{ matrix.os_version }}-${{ matrix.architecture }}-${{ matrix.architecture_variant }}-${{ matrix.compiler }}-${{ matrix.compiler_version }}-${{ matrix.generator }}
 
@@ -403,7 +403,7 @@ jobs:
         uses: robinraju/release-downloader@v1.13
         with:
           repository: cscosine/csBaseLibs
-          tag: v0.1.0-rc1
+          tag: v0.1.0
           fileName: ${{ steps.filename_csBaseLibs_csLie.outputs.filename_csBaseLibs_csLie }}
           out-file-path: workspace/libs/csv1-${{ matrix.os }}-${{ matrix.os_version }}-${{ matrix.architecture }}-${{ matrix.architecture_variant }}-${{ matrix.compiler }}-${{ matrix.compiler_version }}-${{ matrix.generator }}
 
@@ -426,7 +426,7 @@ jobs:
         uses: robinraju/release-downloader@v1.13
         with:
           repository: cscosine/csBaseLibs
-          tag: v0.1.0-rc1
+          tag: v0.1.0
           fileName: ${{ steps.filename_csBaseLibs_csCamera.outputs.filename_csBaseLibs_csCamera }}
           out-file-path: workspace/libs/csv1-${{ matrix.os }}-${{ matrix.os_version }}-${{ matrix.architecture }}-${{ matrix.architecture_variant }}-${{ matrix.compiler }}-${{ matrix.compiler_version }}-${{ matrix.generator }}
 
